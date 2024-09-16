@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <form action="" method="post">
+            {% csrf_token %}
+            <h6>WEBSCRAPER</h6>
+            <h1>Enter the link of the website you want to extract.</h1>
+            <input type="url" name="url" required />
+            <br />
+            <br />
+            <input class="submit_btn" type="submit" />
+            {% for message in messages %}
+            <div  data-aos="fade-up" data-aos-duration="3000" {% if message.tags %} class="{{message.tags}}"{% endif %}>
+              <h5>{{message}}</h5>
+            </div>
+            {% endfor %}
+            
+        </form>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+        opacity: 1,
+        duration: 3000,
+        offset: true
+      });
+    </script>
+        <style> 
+        @import url('https://fonts.googleapis.com/css2?family=Inter&family=Lexend+Deca:wght@400;700&display=swap');
+
+      body{
+        background: #111;
+        margin: auto;
+        font-family: 'Lexend Deca', sans-serif;
+        color: white;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        text-align: center;
+        margin-top: 20%;
+      }
+    input {
+      background: #ecf0f3;
+      padding: 10px;
+      padding-left: 20px;
+      height: 50px;
+      width: 60%;
+      font-size: 25px;
+      margin-bottom: 50px;
+      border-radius: 50px;
+        }
+      h1{
+        font-size: 24px;
+      }
+      h6{
+        font-size: 70px;
+      }
+      h5{
+        font-size: 20px;
+      }
+
+    h3{
+      font-size: 50px;
+      margin-left: 10%;
+      margin-right: 10%;
+      margin-top: 16%;
+      margin-bottom: 16%;
+    }
+    .success{
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: fit-content;
+      color: white;
+      font-size: 10px;
+      text-align: center;
+      white-space: initial;
+    }
+    .success h5{
+      width: 70%;
+    }
+    .error{
+      color: red;
+      font-size: 27px;
+    }
+    .submit_btn{
+      font-family: 'Lexend Deca', sans-serif;
+      height: 90px;
+      width: 35%;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 24px;
+      background-color: #19bc21c3;
+      color: white;
+      padding: 0;
+      border: 0;
+    }
+    .submit_btn:hover{
+      background-color: white;
+      color: #072c45;
+      width: 38%;
+      border-radius: 50px;
+      transition: all 0.5s ease-in-out;
+    }
+        </style>
+</body>
+</html>
